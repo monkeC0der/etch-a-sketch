@@ -9,4 +9,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
         gridContainer.append(gridSquare);
         
     }
+
+    const gridSquareList = document.querySelectorAll(".grid-square");
+    gridSquareList.forEach((gridSquare) => {
+        gridSquare.addEventListener("mouseover", () => {
+            gridSquare.setAttribute("style", "background:black");
+        });
+    });
 });
+
