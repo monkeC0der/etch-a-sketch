@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     const gridContainer = document.querySelector("#grid-container");
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 256; i++) {
         let gridSquare = document.createElement("div");
         let gridSquareText = document.createElement("h1");
         gridSquare.classList.add("grid-square");
