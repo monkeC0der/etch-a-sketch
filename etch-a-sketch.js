@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         gridSquare.classList.add("grid-square");
         gridSquare.setAttribute(
             "style",
-            "width: 6%; aspect-ratio: 1/1; text-align: center; clear:both;"
+            "width: 6.25%; aspect-ratio: 1/1; text-align: center; clear:both;"
         );
         gridContainer.append(gridSquare);
     }
@@ -27,10 +27,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 console.log("removed!")
             });
             
-            for (let i = 0; i < (screenSizeInput*screenSizeInput)+1; i++) {
+            for (let i = 0; i < (screenSizeInput*screenSizeInput); i++) {
                 let newGridContainer = document.querySelector("#grid-container");
                 let gridSquare = document.createElement("div");
                 gridSquare.classList.add("grid-square");
+                // let gridText = document.createElement("p")
+                // gridText.textContent = i+1;
+                // gridText.style.fontSize = "3px"
+                // gridSquare.append(gridText)
+
                 gridSquare.style.width = `${100/screenSizeInput}%`
                 newGridContainer.append(gridSquare);
             }
