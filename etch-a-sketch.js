@@ -1,3 +1,12 @@
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
 document.addEventListener("DOMContentLoaded", (event) => {
     const gridContainer = document.querySelector("#grid-container");
     for (let i = 0; i < 256; i++) {
@@ -13,7 +22,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let gridSquareList = document.querySelectorAll(".grid-square");
     gridSquareList.forEach((gridSquare) => {
         gridSquare.addEventListener("mouseover", () => {
-            gridSquare.style.backgroundColor = "black";
+            gridSquare.style.backgroundColor = getRandomColor();
         });
     });
 
@@ -43,7 +52,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             gridSquareList = document.querySelectorAll(".grid-square");
             gridSquareList.forEach((gridSquare) => {
                 gridSquare.addEventListener("mouseover", () => {
-                    gridSquare.style.backgroundColor = "black";
+                    gridSquare.style.backgroundColor = getRandomColor();
                 })
             })
         }
