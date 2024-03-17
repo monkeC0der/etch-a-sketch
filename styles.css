@@ -3,7 +3,7 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    
     height: 100vh;
 }
 
@@ -11,7 +11,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     width: 90vh;
 }
@@ -23,3 +22,8 @@ body {
     clear:both;
 }
 
+#settings-container {
+    display: flex;
+    justify-content: end;
+    align-items: start;
+}
