@@ -2,19 +2,48 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const gridContainer = document.querySelector("#grid-container");
     for (let i = 0; i < 256; i++) {
         let gridSquare = document.createElement("div");
-        // let gridSquareText = document.createElement("h1");
         gridSquare.classList.add("grid-square");
-        // gridSquareText.textContent = i+1;
-        // gridSquare.append(gridSquareText);
+        gridSquare.setAttribute(
+            "style",
+            "width: 6%; aspect-ratio: 1/1; text-align: center; clear:both;"
+        );
         gridContainer.append(gridSquare);
-        
     }
 
-    const gridSquareList = document.querySelectorAll(".grid-square");
+    let gridSquareList = document.querySelectorAll(".grid-square");
     gridSquareList.forEach((gridSquare) => {
         gridSquare.addEventListener("mouseover", () => {
-            gridSquare.setAttribute("style", "background:black");
+            gridSquare.style.backgroundColor = "black";
         });
     });
-});
 
+    const adjustScreenSizeButton = document.querySelector("#adjust-screen-size-button");
+    adjustScreenSizeButton.addEventListener("click", () => {
+        screenSizeInput = prompt("Select Canvas Width (max 100):");
+        gridSquareList = document.querySelectorAll(".grid-square");
+        if (screenSizeInput <= 100) {
+            gridSquareList.forEach((gridSquare) => {
+                gridContainer.removeChild(gridSquare);
+                console.log("removed!")
+            });
+            
+            for (let i = 0; i < (screenSizeInput*screenSizeInput)+1; i++) {
+                let newGridContainer = document.querySelector("#grid-container");
+                let gridSquare = document.createElement("div");
+                gridSquare.classList.add("grid-square");
+                gridSquare.style.width = `${100/screenSizeInput}%`
+                newGridContainer.append(gridSquare);
+            }
+
+            gridSquareList = document.querySelectorAll(".grid-square");
+            gridSquareList.forEach((gridSquare) => {
+                gridSquare.addEventListener("mouseover", () => {
+                    gridSquare.style.backgroundColor = "black";
+                })
+            })
+        }
+        else {
+            screenSizeInput = prompt("That Screen Size is Too Large!");
+        }
+    });
+});
