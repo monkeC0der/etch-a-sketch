@@ -1,15 +1,25 @@
 
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 #grid-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    width: 90vh;
 }
 
 .grid-square {
-    width: 6vw;
+    width: 6%;
+    aspect-ratio: 1/1;
     text-align: center;
+    clear:both;
 }
 

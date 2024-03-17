@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const gridContainer = document.querySelector("#grid-container");
     for (let i = 0; i < 256; i++) {
         let gridSquare = document.createElement("div");
-        let gridSquareText = document.createElement("h1");
+        // let gridSquareText = document.createElement("h1");
         gridSquare.classList.add("grid-square");
-        gridSquareText.textContent = i+1;
-        gridSquare.append(gridSquareText);
+        // gridSquareText.textContent = i+1;
+        // gridSquare.append(gridSquareText);
         gridContainer.append(gridSquare);
         
     }
